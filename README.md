@@ -26,5 +26,12 @@ $ gitrdone
 ## Warnings
 This may not follow the git conventions that your team uses. In particular, be warned that these functions are using `git rebase` and `git push --force` which can cause very terrible things to happen if you have multiple developers working on the same branch. Feel free to modify the usage of this script to replace these with alternatives like `git merge` and `git push` if that fits your workflow better. 
 
-## Add to Bash Profile
-Simply add the following code to your bash profile and you will be able to use the commands as needed in your terminal. I am by no means a bash master so any feedback is welcome!
+## Installation
+Clone the repo to a directory of your choice, for example ~/david/code/
+
+Then source it in your bash profile
+
+```
+source ~/david/code/git-shortcuts/git-shortcuts.bash
+```
+
