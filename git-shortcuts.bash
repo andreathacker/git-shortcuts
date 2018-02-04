@@ -1,7 +1,7 @@
 #!/bin/bash
 
 export CURRENT_BRANCH_NAME=""
-export CURRENT_JURA_TAG=""
+export JIRA_TAG=""
 
 # git - status
 # Git status
