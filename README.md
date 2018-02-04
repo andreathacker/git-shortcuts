@@ -35,3 +35,8 @@ Then source it in your bash profile
 source ~/david/code/git-shortcuts/git-shortcuts.bash
 ```
 
+## Todo 
+- Make main working branch configurable for those who branch from `develop` or a staging branch. 
+- Use the `--force-with-lease` flag with git force push
+- Add ability to push PRs to github from the command line with a subject and message
+- Add ability to assign reviewers and assignees to PRs from the command line
