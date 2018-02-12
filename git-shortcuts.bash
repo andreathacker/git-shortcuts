@@ -21,11 +21,11 @@ gurb() {
   get_current_branch_name
   echo $CURRENT_BRANCH_NAME
 
-  git checkout master
+  git checkout $GIT_SHORTCUTS_BRANCH
   git pull
   
   git checkout $CURRENT_BRANCH_NAME
-  git rebase master
+  git rebase $GIT_SHORTCUTS_BRANCH
 }
 
 # git - commit
@@ -89,3 +89,15 @@ get_jira_tag() {
   JIRA_TAG=$( echo $CURRENT_BRANCH_NAME | cut -d_ -f1 )
   echo $JIRA_TAG
 }
+
+# git - checkout pull request
+# Checks out a pull request from the repo defined at $GIT_SHORTCUTS_REPO. 
+# The input for the function should be the PR number which is also the last piece of the url. 
+# Ex "https://github.com/pelotoncycle/android/pull/1525"  - "1525" would be the input. 
+gcpr() {
+  PR="$GIT_SHORTCUTS_REPO/pull/$1"
+  git checkout $PR 
+}
+
+
+
