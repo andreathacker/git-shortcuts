@@ -19,7 +19,6 @@ gb() {
 # On the current branch, checkout out master and pull the latest changes. Then switch back to your branch and rebase on master. 
 gurb() {
   get_current_branch_name
-  echo $CURRENT_BRANCH_NAME
 
   git checkout $GIT_SHORTCUTS_BRANCH
   git pull
@@ -81,13 +80,11 @@ get_current_branch_name() {
   branch_name="(unnamed branch)"     # detached HEAD
   branch_name=${branch_name##refs/heads/}
   CURRENT_BRANCH_NAME=$branch_name
-  echo $CURRENT_BRANCH_NAME
 }
 
 get_jira_tag() {
   get_current_branch_name
   JIRA_TAG=$( echo $CURRENT_BRANCH_NAME | cut -d_ -f1 )
-  echo $JIRA_TAG
 }
 
 # git - checkout pull request
