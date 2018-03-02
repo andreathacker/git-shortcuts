@@ -18,13 +18,24 @@ gb() {
 # git - update rebase branch
 # On the current branch, checkout out master and pull the latest changes. Then switch back to your branch and rebase on master. 
 gurb() {
+  update_main_branch
+  
+  git rebase $GIT_SHORTCUTS_BRANCH
+}
+
+gumb() {
+  update_main_branch
+  
+  git merge $GIT_SHORTCUTS_BRANCH
+}
+
+update_main_branch() {
   get_current_branch_name
 
   git checkout $GIT_SHORTCUTS_BRANCH
   git pull
-  
+
   git checkout $CURRENT_BRANCH_NAME
-  git rebase $GIT_SHORTCUTS_BRANCH
 }
 
 # git - commit
@@ -52,6 +63,9 @@ gfp() {
 ga() {
   git add -A
 }
+
+# git - remove all branchs (except master)
+alias grab="git branch | grep -v "master" | xargs git branch -D"
 
 # git - open pull request
 gopr() {
