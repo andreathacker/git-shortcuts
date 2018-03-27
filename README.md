@@ -33,6 +33,8 @@ Then source it in your bash profile
 
 ```
 source ~/david/code/git-shortcuts/git-shortcuts.bash
+export GIT_SHORTCUTS_REPO="https://github.com/ethereum/go-ethereum"
+export GIT_SHORTCUTS_BRANCH="master"
 ```
 
 ## Todo 
