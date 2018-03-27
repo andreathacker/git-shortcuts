@@ -36,6 +36,7 @@ source ~/david/code/git-shortcuts/git-shortcuts.bash
 export GIT_SHORTCUTS_REPO="https://github.com/ethereum/go-ethereum"
 export GIT_SHORTCUTS_BRANCH="master"
 ```
+The `GIT_SHORTCUTS_REPO` and `GIT_SHORTCUTS_BRANCH` values can be used which repository to use, and what branch should be treated as your main branch that you want to scripts to rebase/merge changes from.  
 
 ## Todo 
 - Make main working branch configurable for those who branch from `develop` or a staging branch. 
