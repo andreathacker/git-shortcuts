@@ -2,6 +2,7 @@
 
 export CURRENT_BRANCH_NAME=""
 export JIRA_TAG=""
+export LOOP_STATUS_INTERVAL=60
 
 # git - status
 # Git status
@@ -110,5 +111,14 @@ gcpr() {
   git checkout $PR 
 }
 
+# ~~~ SCRIPTS ~~~
 
+loop_diff() {
+  while :	
+  do
+    echo ".  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ." 
+    git diff --name-status
+    sleep $LOOP_STATUS_INTERVAL
+  done
+}
 
