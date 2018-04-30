@@ -1,4 +1,17 @@
-## Overview
+
+# Installation
+Clone the repo to a directory of your choice, for example ~/david/code/
+
+Then source it in your bash profile
+
+```
+source ~/david/code/git-shortcuts/git-shortcuts.bash
+export GIT_SHORTCUTS_REPO="https://github.com/ethereum/go-ethereum"
+export GIT_SHORTCUTS_BRANCH="master"
+```
+The `GIT_SHORTCUTS_REPO` and `GIT_SHORTCUTS_BRANCH` values can be used which repository to use, and what branch should be treated as your main branch that you want to scripts to rebase/merge changes from.  
+
+# Shortcuts Overview
 Most of the time when I'm using git I find I use short-lived feature branches and a single head, master. In order to help make some of the most repetitive functions go a little faster, I created some shortcuts in my `.bash_profile`. 
 
 The three most helpful are
@@ -26,19 +39,31 @@ $ gitrdone
 ## Warnings
 This may not follow the git conventions that your team uses. In particular, be warned that these functions are using `git rebase` and `git push --force` which can cause very terrible things to happen if you have multiple developers working on the same branch. Feel free to modify the usage of this script to replace these with alternatives like `git merge` and `git push` if that fits your workflow better. 
 
-## Installation
-Clone the repo to a directory of your choice, for example ~/david/code/
+# Scripts Overview
+!This is currently a work in progress! 
+Many times I find it that you can get stuck in a rabbit hole of code changes and refactoring way too easily. It would be great if there was a way to bring visibility to this so that as developers we could get better at writing chunks of code with small, targeted changes. I think git can help with this!
 
-Then source it in your bash profile
-
+## `loop_diff`
+A simple script that will output the number of files changed every minute. You can leave it open while you code and use it as reminder to make incremental changes that touch as little files as possible. Don't go refactoring something somewhere else until you've finished the task you've set off to do! 
+### Configuration
+You can configure how often the script prints a new diff 
 ```
-source ~/david/code/git-shortcuts/git-shortcuts.bash
-export GIT_SHORTCUTS_REPO="https://github.com/ethereum/go-ethereum"
-export GIT_SHORTCUTS_BRANCH="master"
+export LOOP_STATUS_INTERVAL=60
 ```
-The `GIT_SHORTCUTS_REPO` and `GIT_SHORTCUTS_BRANCH` values can be used which repository to use, and what branch should be treated as your main branch that you want to scripts to rebase/merge changes from.  
 
-## Todo 
+### Example Output
+The script shows me that I've changed two classes so far
+```
+Davids-MacBook-Pro-2:android david$ loop_diff
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .
+M       home/src/main/java/com/peloton/analytics/AnalyticsHelper.java
+M       home/src/test/java/com/peloton/analytics/AnalyticsHelperTest.java
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .
+M       home/src/main/java/com/peloton/analytics/AnalyticsHelper.java
+M       home/src/test/java/com/peloton/analytics/AnalyticsHelperTest.java
+```
+
+# Todo 
 - Make main working branch configurable for those who branch from `develop` or a staging branch. 
 - Use the `--force-with-lease` flag with git force push
 - Add ability to push PRs to github from the command line with a subject and message
