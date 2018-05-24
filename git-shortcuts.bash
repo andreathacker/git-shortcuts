@@ -16,6 +16,11 @@ gb() {
   git branch
 }
 
+gsb() {
+  git status
+  git branch
+}
+
 # git - update rebase branch
 # On the current branch, checkout out master and pull the latest changes. Then switch back to your branch and rebase on master. 
 gurb() {
