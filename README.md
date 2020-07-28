@@ -6,18 +6,15 @@ Then source it in your bash profile
 
 ```
 source ~/david/code/git-shortcuts/git-shortcuts.bash
-export GIT_SHORTCUTS_REPO="https://github.com/ethereum/go-ethereum"
-export GIT_SHORTCUTS_BRANCH="master"
 ```
-The `GIT_SHORTCUTS_REPO` and `GIT_SHORTCUTS_BRANCH` values can be used which repository to use, and what branch should be treated as your main branch that you want to scripts to rebase/merge changes from.  
 
 # Shortcuts Overview
 Most of the time when I'm using git I find I use short-lived feature branches and a single head, master. In order to help make some of the most repetitive functions go a little faster, I created some shortcuts in my `.bash_profile`. 
 
 The three most helpful are
 
-1. `gurb`: If you work in a team and want to make sure you have the latest changes from master you can simply run this command. You can run it on your feature branch and it will checkout master, pull the latest changes for master, checkout your feature branch again, and rebase on the updated local master branch. This allows you to grab the latest changes and never have to worry about switching branches 
-2. `gfp`: A very simple git force push, but just shorter to type :)
+1. `gurb`: If you work in a team and want to make sure you have the latest changes from master you can simply run this command. You can run it on your feature branch and it will checkout master, pull the latest changes for master, checkout your feature branch again, and rebase on the updated local master branch. This allows you to grab the latest changes and never have to worry about switching branches.
+2. `gitready <commit_message>`: Will stage all your changes and commit them with a message
 3. `gitrdone`: Will push and track your branch to the origin if it hasn't already happened. Then it will use the `gurb` command to grab the latest changes, and finally run `gfp` to push your changes. 
 
 So with one command `gitrdone` you can have the latest changes pushed to your feature branch. 
