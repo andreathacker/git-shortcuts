@@ -5,7 +5,7 @@ Clone the repo to a directory of your choice, for example ~/david/code/
 Then source it in your bash profile
 
 ```
-source ~/david/code/git-shortcuts/git-shortcuts.bash
+source ~/andrea/code/git-shortcuts/git-shortcuts.bash
 ```
 
 # Shortcuts Overview
