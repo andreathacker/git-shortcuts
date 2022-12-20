@@ -70,8 +70,17 @@ ga() {
   git add -A
 }
 
-# git - remove all branchs (except master)
+# git - diff master
+alias gdm="git diff origin/master"
+
+# git - checkout master copy
+alias gcm="git checkout -- $1"
+
+# git - remove all branches (except master)
 alias grab="git branch | grep -v "master" | xargs git branch -D"
+
+# git - remove ticket branches
+alias grtb="git branch | grep -v $1 | xargs git branch -D"
 
 # git - open pull request
 gopr() {
