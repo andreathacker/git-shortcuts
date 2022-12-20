@@ -1,11 +1,11 @@
 
 # Installation
-Clone the repo to a directory of your choice, for example ~/david/code/
+Clone the repo to a directory of your choice, for example ~/andrea/code/
 
 Then source it in your bash profile
 
 ```
-source ~/david/code/git-shortcuts/git-shortcuts.bash
+source ~/andrea/code/git-shortcuts/git-shortcuts.bash
 ```
 
 # Shortcuts Overview
@@ -51,7 +51,7 @@ export LOOP_STATUS_INTERVAL=60
 ### Example Output
 The script shows me that I've changed two classes so far
 ```
-Davids-MacBook-Pro-2:android david$ loop_diff
+$ loop_diff
 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .
 M       home/src/main/java/com/peloton/analytics/AnalyticsHelper.java
 M       home/src/test/java/com/peloton/analytics/AnalyticsHelperTest.java
