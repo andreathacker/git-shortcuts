@@ -10,6 +10,12 @@ gs() {
   git status
 } 
 
+# git - log
+# Git log
+gl() {
+  git log
+}
+
 # git - branch
 # Git branch
 gb() {
